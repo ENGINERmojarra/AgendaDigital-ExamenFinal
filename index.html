@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Digital</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Agenda Digital</h1>
+        <nav class="nav-menu">
+            <button id="btnAgregar" class="nav-button active">Agregar Persona</button>
+            <button id="btnBuscar" class="nav-button">Buscar Persona</button>
+            <button id="btnListar" class="nav-button">Listar Personas</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="agregarPersona" class="section-content">
+            <h2>Agregar Nueva Persona</h2>
+            <form id="formAgregar">
+                <div class="form-group">
+                    <label for="identificacion">Número de Identificación:</label>
+                    <input type="text" id="identificacion" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombres">Nombres (ej. José María):</label>
+                    <input type="text" id="nombres" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellidos">Apellidos (ej. Muñoz López):</label>
+                    <input type="text" id="apellidos" required>
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección (ej. Av. Simón Bolívar # 123-45):</label>
+                    <input type="text" id="direccion" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono (ej. 300 123 4567):</label>
+                    <input type="text" id="telefono" required>
+                </div>
+                <button type="submit">Guardar</button>
+            </form>
+            <p id="mensajeAgregar" class="message"></p>
+        </section>
+
+        <section id="buscarPersona" class="section-content hidden">
+            <h2>Buscar Persona</h2>
+            <form id="formBuscar">
+                <div class="form-group">
+                    <label for="criterioBusqueda">Criterio de Búsqueda:</label>
+                    <select id="criterioBusqueda">
+                        <option value="identificacion">Número de Identificación</option>
+                        <option value="nombres">Nombres</option>
+                        <option value="apellidos">Apellidos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="valorBusqueda">Valor a Buscar:</label>
+                    <input type="text" id="valorBusqueda" required>
+                </div>
+                <button type="submit">Buscar</button>
+            </form>
+            <div id="resultadosBusqueda" class="results-container">
+                </div>
+        </section>
+
+        <section id="listarPersonas" class="section-content hidden">
+            <h2>Listar Todas las Personas</h2>
+            <button id="btnCargarLista">Cargar Lista</button>
+            <div id="listaPersonas" class="results-container">
+                </div>
+            <p id="mensajeLista" class="message"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
